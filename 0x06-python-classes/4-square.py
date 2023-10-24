@@ -15,14 +15,14 @@ class Square:
         Returns:
             None
         """
-    self.size = size
+        self.size = size
 
     def area(self):
         """calculates the square's area
         Returns:
             The area of the square
         """
-    return (self.__size) ** 2
+        return (self.__size) ** 2
 
     @property
     def size(self):
@@ -30,7 +30,7 @@ class Square:
         Returns:
             The size of the square
         """
-    return self.__size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -40,10 +40,10 @@ class Square:
         Returns:
             None
         """
-    if type(value) is not int:
-        raise TypeError("size must be an integer")
-    else:
-        if value < 0:
-            raise ValueError("size must be >= 0")
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
         else:
-            self.__size = value
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
