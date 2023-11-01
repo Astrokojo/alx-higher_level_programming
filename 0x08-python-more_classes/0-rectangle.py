@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" A rectangle is a shape with two short sides and two long sides"""
+"""A class that defines a rectangle"""
+
+
 class Rectangle:
-    """ a rectangle class """
+    """An empty class that represents a rectangle"""
     pass
