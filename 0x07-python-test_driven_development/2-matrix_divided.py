@@ -3,20 +3,20 @@
 
 def matrix_divided(matrix, div):
     """
-    Divide all elements of a matrix by a number and round to 3 decimal places.
+    Divides matrix by a number and rounds to 3 decimal places.
 
     Args:
-    matrix (list of lists): The matrix to be divided.
-    div (int or float): The number by which to divide the elements.
+        matrix (list of lists): The matrix to be divided.
+            div (int or float): The number by which to divide the elements.
 
     Returns:
-    list of lists: A new matrix with elements divided by 'div' and rounded to 2 decimal places.
+        list of lists: A new matrix with elements divided by 'div' and rounded to 2 decimal places.
 
     Raises:
-    TypeError: If 'matrix' is not a list of lists containing integers or floats,
-                or if 'div' is not a number (integer or float).
-    TypeError: If each row of the matrix does not have the same size.
-    ZeroDivisionError: If 'div' is equal to 0.
+        TypeError: If 'matrix' is not a list of lists containing integers or floats,
+            or if 'div' is not a number (integer or float).
+        TypeError: If each row of the matrix does not have the same size.
+            ZeroDivisionError: If 'div' is equal to 0.
     """
 
     # Check if 'matrix' is a list of lists containing integers or floats
