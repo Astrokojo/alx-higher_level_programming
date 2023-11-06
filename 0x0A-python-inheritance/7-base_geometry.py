@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+has a class
+"""
+
+
 class BaseGeometry:
     """BaseGeometry class"""
 

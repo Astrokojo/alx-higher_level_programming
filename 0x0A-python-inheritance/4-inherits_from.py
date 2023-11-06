@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+has aclasss
+"""
+
+
 def inherits_from(obj, a_class):
     """checks if an instance of a class that inherited from,
         the specific class"""
