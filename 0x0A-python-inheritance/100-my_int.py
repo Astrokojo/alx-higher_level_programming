@@ -4,7 +4,6 @@ This module contains stuff
 """
 class MyInt(int):
     """ Custom int class"""
-
     def __eq__(self, other):
         """function inverts `==`"""
         return super().__ne__(other)
