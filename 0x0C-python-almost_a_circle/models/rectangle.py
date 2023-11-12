@@ -10,10 +10,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialization"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
     
     @property    
     def width(self):
@@ -84,5 +84,31 @@ class Rectangle(Base):
     def __str__(self) -> str:
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
     
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
         
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+                
+    def to_dictionary(self):
+      #altenatively  return self.__dict__ 
+      # #but you can't set the key names
+      return {
+          "id": self.id,
+          "width": self.width,
+          "height": self.height,
+          "x": self.x,
+          "y": self.y
+      }
+    
