@@ -9,7 +9,7 @@ class Square(Rectangle):
     """ model representing a square"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ 
+        """
         Constructor for the Square class.
         Args:
             size (int): Size of the square.
