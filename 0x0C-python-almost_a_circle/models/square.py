@@ -1,9 +1,22 @@
 #!/bin/usr/python3
+"""
+Square module
+"""
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """ model representing a square"""
+
     def __init__(self, size, x=0, y=0, id=None):
+        """ 
+        Constructor for the Square class.
+        Args:
+            size (int): Size of the square.
+            x (int): x-coordinate of the square.
+            y (int): y-coordinate of the square.
+            id (int): Unique identifier for the square.
+        """
         super().__init__(size, size, x, y, id)
 
     @property
@@ -19,19 +32,6 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
-
-    def __str__(self):
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
-    def area(self):
-        return self.__width * self.__height
-
-    def display(self):
-        for i in range(self.__y):
-            print()
-
-        for i in range(self.__height):
-            print("#" * self.__width)
 
     def update(self, *args, **kwargs):
         if args:
@@ -56,3 +56,6 @@ class Square(Rectangle):
             "x": self.x,
             "y": self.y
             }
+
+    def __str__(self):
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"

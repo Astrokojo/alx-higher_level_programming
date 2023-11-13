@@ -18,11 +18,11 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes a new instance of the Rectangle class."""
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -34,10 +34,8 @@ class Rectangle(Base):
         """Sets the width of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-
         if value <= 0:
             raise ValueError("width must be > 0")
-
         self.__width = value
 
     @property
@@ -98,12 +96,15 @@ class Rectangle(Base):
             print()
 
         for i in range(self.__height):
+            print(" " * self.__x, end='')
             print("#" * self.__width)
 
     def __str__(self) -> str:
         """Returns a string representation of the rectangle."""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}\
-    - {self.__width}/{self.__height}"
+        return (
+                f'[Rectangle] ({self.id}){self.__x}/{self.__y} - '
+                f'{self.__width}/{self.__height}'
+                )
 
     def update(self, *args, **kwargs):
         """

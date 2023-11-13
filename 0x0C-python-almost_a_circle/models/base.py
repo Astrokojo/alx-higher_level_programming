@@ -52,19 +52,15 @@ class Base():
         Returns:
             None
         """
-        if list_objs is None:
-            json_file.write("[]")
-
         filename = cls.__name__ + ".json"
 
-        dict_list = []
-        for obj in list_objs:
-            dict_list.append(obj.to_dictionary())
-
-        json_str = cls.to_json_string(dict_list)
-
         with open(filename, 'w', encoding="utf-8") as json_file:
-            json_file.write(json_str)
+            if list_objs is None:
+                json_file.write("[]")
+            else:
+                dict_list = [obj.to_dictionary() for obj in list_objs]
+                json_str = cls.to_json_string(dict_list)
+                json_file.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
@@ -93,7 +89,7 @@ class Base():
             object: Instance of the class with attributes set.
         """
         if cls.__name__ == "Rectangle":
-            instance = cls(1, 1)
+            instance = cls(1, 1, 1, 1)
         else:
             instance = cls(1)
         instance.update(**dictionary)
