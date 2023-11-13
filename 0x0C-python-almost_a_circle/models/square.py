@@ -29,6 +29,7 @@ class Square(Rectangle):
     def size(self, value):
         """Sets the size of the square."""
         self.width = value
+        self.height = value
 
     def __str__(self):
         """Returns a string representation of the square."""
