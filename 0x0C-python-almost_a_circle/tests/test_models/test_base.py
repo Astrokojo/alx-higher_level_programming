@@ -228,7 +228,8 @@ class TestBase_create(unittest.TestCase):
         r1 = Rectangle(3, 5, 1, 2, 7)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
-        self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r1))
+        expected_str = "[Rectangle] (7) 1/2 - {}/{}".format(r1.width, r1.height)
+        self.assertEqual(expected_str, str(r1))
 
     def test_create_rectangle_new(self):
         r1 = Rectangle(3, 5, 1, 2, 7)
