@@ -5,7 +5,7 @@ class Rectangle {
     this.height = h;
 
     if (w <= 0 || h <= 0) {
-      return Rectangle;
+      return {};
     }
   }
 }
