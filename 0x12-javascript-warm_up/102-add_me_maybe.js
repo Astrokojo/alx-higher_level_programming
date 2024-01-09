@@ -1,5 +1,5 @@
 #!/usr/bin/node
-function incrementCall (number, theFunction) {
+function addMeMaybe (number, theFunction) {
 	  theFunction(number + 1);
 }
-module.exports = { incrementCall };
+module.exports = { addMeMaybe };
