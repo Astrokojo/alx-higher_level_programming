@@ -23,7 +23,8 @@ if __name__ == "__main__":
                 WHERE name LIKE '{:s}'".format(sys.argv[4]))
 
         for state in cur.fetchall():
-            print(state)
+            if state[1] == sys.argv[4]:
+                print(state)
         cur.close()
         db.close()
 
