@@ -19,7 +19,7 @@ if __name__ == "__main__":
                 )
 
         cur = db.cursor()
-        query = ("SELECT * FROM states where BINARY name = %s")
+        query = ("SELECT * FROM states WHERE name = %s ORDER BY id ASC")
         cur.execute(query, (sys.argv[4],))
 
         for state in cur.fetchall():
