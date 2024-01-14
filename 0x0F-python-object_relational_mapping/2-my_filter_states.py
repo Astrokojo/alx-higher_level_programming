@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" lists all states from the database hbtn_0e_0_usa"""
+""" displays all values in the states table of hbtn_0e_0_usa"""
 
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("needs 3 arguments")
+    if len(sys.argv) != 5:
+        print("needs 4 arguments")
         sys.exit(1)
 
     try:
@@ -19,8 +19,8 @@ if __name__ == "__main__":
                 )
 
         cur = db.cursor()
-        cur.execute("SELECT * FROM states \
-                WHERE BINARY name LIKE 'N%' ORDER BY id ASC")
+        query = ("SELECT * FROM states where BINARY name = %s")
+        cur.execute(query, (sys.argv[4],))
 
         for state in cur.fetchall():
             print(state)
