@@ -3,10 +3,10 @@
 Inherits from SQlAlchemy base and links to the MYSQl tables states.
 """
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
-
+mymetadata = MetaData()
 Base = declarative_base()
 
 

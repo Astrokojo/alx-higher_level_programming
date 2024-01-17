@@ -3,6 +3,7 @@
 # Inherits from SQLAlchemy Base
 # Links model to the MySQL table cities.
 
+from model_state import Base
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
